@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://ds5hi0alc14pw"]
+
+[ext_resource type="Texture2D" uid="uid://cc8bydofqujti" path="res://boxes/small_box.png" id="1_forne"]
+[ext_resource type="Script" uid="uid://j0608y5fmyiy" path="res://boxes/small_box.gd" id="1_rw5wo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_forne"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rw5wo"]
+size = Vector2(56, 0.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1aqiy"]
+size = Vector2(66, 66)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3l8ut"]
+size = Vector2(80, 80)
+
+[node name="SmallBox" type="RigidBody2D"]
+collision_layer = 10
+collision_mask = 24
+mass = 1000.0
+script = ExtResource("1_rw5wo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("1_forne")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_forne")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, -32.125)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_rw5wo")
+
+[node name="weightadder" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="weightadder"]
+shape = SubResource("RectangleShape2D_1aqiy")
+
+[node name="strengthchecker" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="strengthchecker"]
+shape = SubResource("RectangleShape2D_3l8ut")
+
+[connection signal="area_entered" from="weightadder" to="." method="_on_weightadder_area_entered"]
+[connection signal="area_exited" from="weightadder" to="." method="_on_weightadder_area_exited"]
+[connection signal="body_entered" from="strengthchecker" to="." method="_on_strengthchecker_body_entered"]
+[connection signal="body_exited" from="strengthchecker" to="." method="_on_strengthchecker_body_exited"]

@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://dffhqihbs38te"]
+
+[ext_resource type="Texture2D" uid="uid://icu66nww6k2w" path="res://tilemap.png" id="1_3hls8"]
+[ext_resource type="PackedScene" uid="uid://dijwuf380fc25" path="res://test_player.tscn" id="2_hbghi"]
+[ext_resource type="PackedScene" uid="uid://ds5hi0alc14pw" path="res://boxes/small_box.tscn" id="3_hn12h"]
+[ext_resource type="PackedScene" uid="uid://dnuhvjxnrmkgl" path="res://doors/door.tscn" id="5_5hph3"]
+[ext_resource type="PackedScene" uid="uid://drpfo457w3kf2" path="res://buttons/weight_button.tscn" id="5_rka8t"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hbghi"]
+texture = ExtResource("1_3hls8")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_hn12h"]
+physics_layer_0/collision_layer = 19
+sources/0 = SubResource("TileSetAtlasSource_hbghi")
+
+[node name="level1" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(4, 4)
+tile_set = SubResource("TileSet_hn12h")
+format = 2
+layer_0/tile_data = PackedInt32Array(589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0)
+
+[node name="test_player" parent="." instance=ExtResource("2_hbghi")]
+position = Vector2(832, 424)
+collision_mask = 5
+
+[node name="SmallBox" parent="." instance=ExtResource("3_hn12h")]
+position = Vector2(650, 481)
+
+[node name="WeightButton" parent="." node_paths=PackedStringArray("activate_objects") instance=ExtResource("5_rka8t")]
+position = Vector2(1032, 544)
+activate_objects = [NodePath("../Door")]
+
+[node name="Door" parent="." instance=ExtResource("5_5hph3")]
+position = Vector2(1184, 448)

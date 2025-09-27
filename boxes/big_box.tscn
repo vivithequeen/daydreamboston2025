@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://3gj0rvdh70nu"]
+
+[ext_resource type="Script" uid="uid://da0a35foe8gw6" path="res://boxes/big_box.gd" id="1_ri3yo"]
+[ext_resource type="Texture2D" uid="uid://bv1q0ftsn52h4" path="res://boxes/big_box.png" id="2_ri3yo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_forne"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rw5wo"]
+size = Vector2(120, 0.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ri3yo"]
+size = Vector2(132, 132)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_12ih0"]
+size = Vector2(144, 144)
+
+[node name="BigBox" type="RigidBody2D"]
+collision_layer = 10
+collision_mask = 24
+mass = 1000.0
+script = ExtResource("1_ri3yo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("2_ri3yo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_forne")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, -64.125)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_rw5wo")
+
+[node name="weightadder" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="weightadder"]
+shape = SubResource("RectangleShape2D_ri3yo")
+
+[node name="strengthchecker" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="strengthchecker"]
+shape = SubResource("RectangleShape2D_12ih0")
+
+[connection signal="area_entered" from="weightadder" to="." method="_on_weightadder_area_entered"]
+[connection signal="area_exited" from="weightadder" to="." method="_on_weightadder_area_exited"]
+[connection signal="body_entered" from="strengthchecker" to="." method="_on_strengthchecker_body_entered"]
+[connection signal="body_exited" from="strengthchecker" to="." method="_on_strengthchecker_body_exited"]
