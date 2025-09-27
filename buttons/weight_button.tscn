@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://cmj07i8qq3fcv" path="res://buttons/weight_button.png" id="1_irb6m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_irb6m"]
-size = Vector2(120, 40)
+size = Vector2(112, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i73wh"]
-size = Vector2(160, 20)
+size = Vector2(30, 20)
 
 [node name="WeightButton" type="StaticBody2D"]
 collision_layer = 19
@@ -31,11 +31,11 @@ shape = SubResource("RectangleShape2D_i73wh")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-86, 22)
-polygon = PackedVector2Array(26, -30, -14, 10, 26, 10)
+polygon = PackedVector2Array(30, -30, -10, 10, 30, 10)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
 position = Vector2(74, 22)
-polygon = PackedVector2Array(-14, -30, -14, 10, 26, 10)
+polygon = PackedVector2Array(-18, -30, -18, 10, 22, 10)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

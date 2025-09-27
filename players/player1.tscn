@@ -1,0 +1,123 @@
+[gd_scene load_steps=13 format=3 uid="uid://c1pcf6senove8"]
+
+[ext_resource type="Texture2D" uid="uid://bnionftixfowc" path="res://players/art/player1.png" id="1_446ey"]
+[ext_resource type="Script" uid="uid://bpl1ejm5ykbgl" path="res://players/player_1.gd" id="1_u0tpj"]
+[ext_resource type="Script" uid="uid://bdnhcm431yfr" path="res://players/ControllerHandler.gd" id="2_num78"]
+[ext_resource type="Script" uid="uid://c4l1kiv3fwrqe" path="res://players/BodyHandler.gd" id="3_006j3"]
+[ext_resource type="Texture2D" uid="uid://ctl3urbpaur27" path="res://players/art/player1Limb.png" id="3_h7y0j"]
+[ext_resource type="Script" uid="uid://dgm1x1s4afp81" path="res://players/InteractHandler.gd" id="4_3odsw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_num78"]
+size = Vector2(12, 33)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_woueq"]
+radius = 38.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_006j3"]
+size = Vector2(3, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hpsvj"]
+size = Vector2(3, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_446ey"]
+size = Vector2(3, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h7y0j"]
+size = Vector2(3, 11)
+
+[node name="player1" type="CharacterBody2D"]
+collision_layer = 21
+script = ExtResource("1_u0tpj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_446ey")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_num78")
+
+[node name="ControllerHandlerComp" type="Node" parent="." node_paths=PackedStringArray("actor", "interactHandler")]
+script = ExtResource("2_num78")
+actor = NodePath("..")
+interactHandler = NodePath("../InteractHandlerComp")
+
+[node name="BodyHandlerComp" type="Node" parent="." node_paths=PackedStringArray("armL", "armR", "handler")]
+script = ExtResource("3_006j3")
+armL = NodePath("../ArmL")
+armR = NodePath("../ArmR")
+handler = NodePath("../ControllerHandlerComp")
+
+[node name="InteractHandlerComp" type="Node" parent="." node_paths=PackedStringArray("detector", "actor")]
+script = ExtResource("4_3odsw")
+detector = NodePath("../InteractableDetector")
+actor = NodePath("..")
+
+[node name="InteractableDetector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableDetector"]
+shape = SubResource("CircleShape2D_woueq")
+
+[node name="ArmL" type="CharacterBody2D" parent="."]
+position = Vector2(-4.5, -4)
+collision_layer = 0
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="ArmL"]
+position = Vector2(0, 5.5)
+texture = ExtResource("3_h7y0j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArmL"]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_006j3")
+
+[node name="ArmR" type="CharacterBody2D" parent="."]
+position = Vector2(4.5, -4)
+collision_layer = 0
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="ArmR"]
+position = Vector2(0, 5.5)
+texture = ExtResource("3_h7y0j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArmR"]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_hpsvj")
+
+[node name="LegL" type="RigidBody2D" parent="."]
+position = Vector2(-1.5, 11.5)
+collision_layer = 0
+collision_mask = 0
+mass = 10.0
+
+[node name="Sprite2D" type="Sprite2D" parent="LegL"]
+scale = Vector2(4, 4)
+texture = ExtResource("3_h7y0j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LegL"]
+shape = SubResource("RectangleShape2D_446ey")
+
+[node name="LegR" type="RigidBody2D" parent="."]
+position = Vector2(1.5, 11.5)
+collision_layer = 0
+collision_mask = 0
+mass = 10.0
+
+[node name="Sprite2D" type="Sprite2D" parent="LegR"]
+scale = Vector2(4, 4)
+texture = ExtResource("3_h7y0j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LegR"]
+shape = SubResource("RectangleShape2D_h7y0j")
+
+[node name="LegLJoint" type="PinJoint2D" parent="."]
+visible = false
+position = Vector2(-1.5, 6)
+node_a = NodePath("..")
+node_b = NodePath("../LegL")
+
+[node name="LegRJoint" type="PinJoint2D" parent="."]
+visible = false
+position = Vector2(1.5, 6)
+node_a = NodePath("..")
+node_b = NodePath("../LegR")

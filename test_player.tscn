@@ -17,3 +17,4 @@ texture = ExtResource("1_erogg")
 shape = SubResource("RectangleShape2D_imyr3")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true

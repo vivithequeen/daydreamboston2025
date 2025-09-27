@@ -6,7 +6,7 @@ const JUMP_VELOCITY = -400.0
 var is_player = true;
 
 var max_push_weight = 1;
-
+var numArms := 2;
 var current_weight : = 2;
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

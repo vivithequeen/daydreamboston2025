@@ -1,0 +1,149 @@
+[gd_scene load_steps=8 format=3 uid="uid://nntyjxitjcah"]
+
+[ext_resource type="Texture2D" uid="uid://1w3bi18t6ori" path="res://icon.svg" id="1_mhoeb"]
+[ext_resource type="Script" uid="uid://do76y48v8ujuw" path="res://upgrades/Upgrade_Buttons.gd" id="2_3iw71"]
+[ext_resource type="Texture2D" uid="uid://nuqey6b7u8pa" path="res://upgrades/Weight.png" id="3_talqu"]
+[ext_resource type="Texture2D" uid="uid://b1fw6mp0s5aa" path="res://upgrades/Height.png" id="4_kj6ui"]
+[ext_resource type="Texture2D" uid="uid://b5htmd1mea0rw" path="res://upgrades/Arm.png" id="5_4tli0"]
+[ext_resource type="Texture2D" uid="uid://dimxc1a5hn1h5" path="res://upgrades/Leg.png" id="6_w25qd"]
+
+[sub_resource type="GDScript" id="GDScript_salje"]
+script/source = "extends Control 
+
+var numcards = 4
+var card_1 = 3 #(randi() % numcards)
+var card_2 = (randi() % numcards)
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+func _on_pressed() -> void:
+	pass # Replace with function body.
+"
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_salje")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="bg" type="ColorRect" parent="CanvasLayer"]
+offset_left = 2.0
+offset_right = 1156.0
+offset_bottom = 649.0
+scale = Vector2(0.998062, 0.996552)
+color = Color(0.176471, 0.176471, 0.176471, 0.556863)
+metadata/_edit_use_anchors_ = true
+
+[node name="Icon" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(329, 293)
+scale = Vector2(1, 4.17325)
+texture = ExtResource("1_mhoeb")
+
+[node name="Icon2" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(669, 293)
+scale = Vector2(1, 4.17325)
+texture = ExtResource("1_mhoeb")
+
+[node name="Weight" type="TextureButton" parent="CanvasLayer" groups=["Sac\'s"]]
+offset_left = 298.0
+offset_top = 370.0
+offset_right = 314.0
+offset_bottom = 386.0
+scale = Vector2(4, 4)
+script = ExtResource("2_3iw71")
+
+[node name="0" type="Sprite2D" parent="CanvasLayer/Weight"]
+position = Vector2(8.06131, 7.94962)
+texture = ExtResource("3_talqu")
+
+[node name="Height" type="TextureButton" parent="CanvasLayer" groups=["Sac\'s"]]
+offset_left = 303.0
+offset_top = 454.0
+offset_right = 319.0
+offset_bottom = 470.0
+scale = Vector2(4, 4)
+script = ExtResource("2_3iw71")
+
+[node name="1" type="Sprite2D" parent="CanvasLayer/Height"]
+position = Vector2(8.06131, 7.94962)
+texture = ExtResource("4_kj6ui")
+
+[node name="Arm1" type="TextureButton" parent="CanvasLayer" groups=["Sac\'s"]]
+offset_left = 295.0
+offset_top = 282.0
+offset_right = 311.0
+offset_bottom = 298.0
+scale = Vector2(4, 4)
+script = ExtResource("2_3iw71")
+
+[node name="2" type="Sprite2D" parent="CanvasLayer/Arm1"]
+position = Vector2(8.06131, 7.94962)
+texture = ExtResource("5_4tli0")
+
+[node name="Arm2" type="TextureButton" parent="CanvasLayer" groups=["Sac\'s"]]
+offset_left = 300.0
+offset_top = 205.0
+offset_right = 316.0
+offset_bottom = 221.0
+scale = Vector2(4, 4)
+script = ExtResource("2_3iw71")
+
+[node name="3" type="Sprite2D" parent="CanvasLayer/Arm2"]
+position = Vector2(8.06131, 7.94962)
+texture = ExtResource("5_4tli0")
+
+[node name="Leg1" type="TextureButton" parent="CanvasLayer" groups=["Sac\'s"]]
+offset_left = 298.0
+offset_top = 56.0
+offset_right = 314.0
+offset_bottom = 72.0
+scale = Vector2(4, 4)
+script = ExtResource("2_3iw71")
+
+[node name="4" type="Sprite2D" parent="CanvasLayer/Leg1"]
+position = Vector2(8.06131, 7.94962)
+texture = ExtResource("6_w25qd")
+
+[node name="Leg2" type="TextureButton" parent="CanvasLayer" groups=["Sac\'s"]]
+offset_left = 301.0
+offset_top = 135.0
+offset_right = 317.0
+offset_bottom = 151.0
+scale = Vector2(4, 4)
+script = ExtResource("2_3iw71")
+
+[node name="5" type="Sprite2D" parent="CanvasLayer/Leg2"]
+position = Vector2(8.06131, 7.94962)
+texture = ExtResource("6_w25qd")
+
+[connection signal="mouse_entered" from="CanvasLayer/Weight" to="CanvasLayer/Weight" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Weight" to="CanvasLayer/Weight" method="_on_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Weight" to="CanvasLayer/Weight" method="_on_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Height" to="CanvasLayer/Height" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Height" to="CanvasLayer/Height" method="_on_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Height" to="CanvasLayer/Height" method="_on_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Arm1" to="CanvasLayer/Arm1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Arm1" to="CanvasLayer/Arm1" method="_on_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Arm1" to="CanvasLayer/Arm1" method="_on_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Arm2" to="CanvasLayer/Arm2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Arm2" to="CanvasLayer/Arm2" method="_on_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Arm2" to="CanvasLayer/Arm2" method="_on_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Leg1" to="CanvasLayer/Leg1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Leg1" to="CanvasLayer/Leg1" method="_on_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Leg1" to="CanvasLayer/Leg1" method="_on_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Leg2" to="CanvasLayer/Leg2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Leg2" to="CanvasLayer/Leg2" method="_on_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Leg2" to="CanvasLayer/Leg2" method="_on_pressed"]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdutedv4dtp5c"]
+
+[ext_resource type="PackedScene" uid="uid://cnm6ir76vl686" path="res://level_1.tscn" id="1_tv015"]
+[ext_resource type="PackedScene" uid="uid://c1pcf6senove8" path="res://player1.tscn" id="2_t7tip"]
+[ext_resource type="PackedScene" uid="uid://dfmgls3ea41if" path="res://player2.tscn" id="3_tv015"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(405, 111)
+
+[node name="Level1" parent="." instance=ExtResource("1_tv015")]
+position = Vector2(275, 90)
+
+[node name="testCharacter2" parent="." instance=ExtResource("3_tv015")]
+position = Vector2(487, 89)
+
+[node name="testCharacter" parent="." instance=ExtResource("2_t7tip")]
+position = Vector2(333, 90)
