@@ -7,7 +7,7 @@
 size = Vector2(128, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gw11n"]
-size = Vector2(128, 208)
+size = Vector2(128, 296)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_sw4p4"]
 particle_flag_disable_z = true
@@ -35,7 +35,7 @@ collision_layer = 9
 collision_mask = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fan_area"]
-position = Vector2(0, -136)
+position = Vector2(0, -180)
 shape = SubResource("RectangleShape2D_gw11n")
 
 [node name="p" type="GPUParticles2D" parent="."]

@@ -3,7 +3,7 @@ extends RigidBody2D
 var base_weight := 1;
 var current_weight : int;
 var is_box = true;
-var canfloat
+var canfloat = false;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	current_weight = base_weight;
@@ -27,11 +27,16 @@ func _on_weightadder_area_exited(area:Area2D) -> void:
 func _on_strengthchecker_body_entered(body: Node2D) -> void:
 	if(body.get("is_player")):
 		if(body.max_push_weight >= current_weight):
+			set_collision_layer_value(1 , false)
 			set_collision_mask_value(1 , true)
 		else:
+			set_collision_layer_value(1 , true)
+
 			set_collision_mask_value(1 , false)
 
 
 func _on_strengthchecker_body_exited(body: Node2D) -> void:
 	if(body.get("is_player")):
+		set_collision_layer_value(1 , true)
+
 		set_collision_mask_value(1 , false)

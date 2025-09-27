@@ -18,3 +18,5 @@ func _physics_process(delta: float) -> void:
 
 	max_push_weight = $ControllerHandlerComp.numArms
 	#print(current_weight)
+	if(Input.is_action_just_pressed("restart")):
+		Global_sac.restart_level()

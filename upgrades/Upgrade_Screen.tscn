@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://nntyjxitjcah"]
 
-[ext_resource type="Texture2D" uid="uid://1w3bi18t6ori" path="res://icon.svg" id="1_mhoeb"]
+[ext_resource type="Texture2D" uid="uid://s7yeg5oap10a" path="res://upgrades/gay.png" id="1_sqiqk"]
 [ext_resource type="Script" uid="uid://do76y48v8ujuw" path="res://upgrades/Upgrade_Buttons.gd" id="2_3iw71"]
 [ext_resource type="Texture2D" uid="uid://nuqey6b7u8pa" path="res://upgrades/Weight.png" id="3_talqu"]
 [ext_resource type="Texture2D" uid="uid://b1fw6mp0s5aa" path="res://upgrades/Height.png" id="4_kj6ui"]
@@ -37,9 +37,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = SubResource("GDScript_salje")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="Control" parent="."]
+anchors_preset = 0
 
 [node name="bg" type="ColorRect" parent="CanvasLayer"]
+visible = false
 offset_left = 2.0
 offset_right = 1156.0
 offset_bottom = 649.0
@@ -49,13 +51,13 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Icon" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(329, 293)
-scale = Vector2(1, 4.17325)
-texture = ExtResource("1_mhoeb")
+scale = Vector2(3, 5.583)
+texture = ExtResource("1_sqiqk")
 
 [node name="Icon2" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(669, 293)
-scale = Vector2(1, 4.17325)
-texture = ExtResource("1_mhoeb")
+position = Vector2(679, 288)
+scale = Vector2(3, 5.58333)
+texture = ExtResource("1_sqiqk")
 
 [node name="Weight" type="TextureButton" parent="CanvasLayer" groups=["Sac\'s"]]
 offset_left = 298.0

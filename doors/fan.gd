@@ -1,10 +1,12 @@
 extends StaticBody2D
 
+@export var default_on : bool = false
 var current_objects = []
 var active : bool = false;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	if(default_on):
+		activate()
 
 func activate():
 	active = true;

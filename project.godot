@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="DaydreamBoston2025"
-run/main_scene="uid://dffhqihbs38te"
+run/main_scene="uid://b8t2xh8c2k8kq"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -22,6 +22,10 @@ Global_sac="*res://upgrades/Global_sac.gd"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
+
+[gui]
+
+theme/custom="uid://bfvu6aqf6k66o"
 
 [input]
 
@@ -84,6 +88,10 @@ inter_c2={
 "deadzone": 0.2,
 "events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":1,"button_index":2,"pressure":0.0,"pressed":true,"script":null)
 ]
+}
+restart={
+"deadzone": 0.2,
+"events": []
 }
 
 [physics]

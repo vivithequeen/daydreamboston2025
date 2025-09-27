@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bfvu6aqf6k66o"]
+
+[ext_resource type="FontFile" uid="uid://cgvn7hfofy6w3" path="res://Micro5-Regular.ttf" id="1_2krdf"]
+
+[resource]
+default_font = ExtResource("1_2krdf")
+default_font_size = 48

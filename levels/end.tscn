@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dln5yj36f788v"]
+
+[node name="End" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 16.0
+offset_top = 256.0
+offset_right = 492.0
+offset_bottom = 305.0
+scale = Vector2(2.34, 2.34)
+text = "THANKS FORPLAYIGN VOTE FOR US"

@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cpttnu1ayko3h" path="res://players/art/player2Limb.png" id="4_w31wm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wood3"]
-size = Vector2(12, 33)
+size = Vector2(12, 30.5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uqwy3"]
 radius = 38.0
@@ -27,13 +27,14 @@ size = Vector2(3, 11)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 scale = Vector2(4, 4)
-collision_layer = 23
+collision_layer = 7
 script = ExtResource("1_qv1y8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_wood3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.25)
 shape = SubResource("RectangleShape2D_wood3")
 
 [node name="ControllerHandlerComp" type="Node" parent="." node_paths=PackedStringArray("actor", "interactHandler")]
