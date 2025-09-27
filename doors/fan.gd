@@ -13,6 +13,7 @@ func deactivate():
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	$p.visible = active
 	if(active):
 		for i in current_objects:
 			if(i is CharacterBody2D):
@@ -25,8 +26,8 @@ func _process(delta: float) -> void:
 
 func _on_fan_area_body_entered(body:Node2D) -> void:
 
-	print(body)
-	if(body.get("current_weight") and body.get("current_weight") >= 1):
+	print(body.get("current_weight"))
+	if(body.get("canfloat")):
 		print("pee pee poo poo")
 		current_objects.append(body)
 
@@ -34,7 +35,7 @@ func _on_fan_area_body_entered(body:Node2D) -> void:
 
 
 func _on_fan_area_body_exited(body:Node2D) -> void:
-	if(body.get("current_weight") and body.get("current_weight") >= 1):
+	if(body.get("canfloat")):
 
 		for i in range(current_objects.size()):
 			if(current_objects[i].name == body.name):

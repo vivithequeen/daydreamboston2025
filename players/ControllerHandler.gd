@@ -47,25 +47,48 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed(inputs["interact"]):
 		interactHandler.use_interactable()
-	
+	change_arms(numArms)
+	change_legs(numLegs)
 	actor.move_and_slide()
 
 
 func change_arms(x: int) -> void:
-	numArms = x
 
+	if x == 0:
+		actor.get_node("ArmL").hide()
+		actor.get_node("ArmL/CollisionShape2D").disabled = true
+		actor.get_node("ArmR").hide()
+		actor.get_node("ArmR/CollisionShape2D").disabled = true
+	elif x == 1:
+		actor.get_node("ArmL").show()
+		actor.get_node("ArmL/CollisionShape2D").disabled = false
+		actor.get_node("ArmR").hide()
+		actor.get_node("ArmR/CollisionShape2D").disabled = true
+	elif x == 2:
+		actor.get_node("ArmL").show()
+		actor.get_node("ArmL/CollisionShape2D").disabled = false
+		actor.get_node("ArmR").show()
+		actor.get_node("ArmR/CollisionShape2D").disabled = false
 func change_legs(x: int) -> void:
-	numLegs = x
-	match x:
-		0:
-			SPEED = 10
-			JUMP_VELOCITY = 0.0
-		1:
-			SPEED = 100
-			JUMP_VELOCITY = -150.0
-		2:
-			SPEED = 200
-			JUMP_VELOCITY = -300.0
+
+	if x == 0:
+		SPEED = 200
+		JUMP_VELOCITY = 0.0
+		actor.get_node("CollisionShape2D").shape.get_rect().size.y = 10
+		actor.get_node("LegL").hide()
+		actor.get_node("LegR").hide()
+	elif x == 1:
+		SPEED = 300
+		JUMP_VELOCITY = -400.0
+		actor.get_node("CollisionShape2D").shape.get_rect().size.y = 33
+		actor.get_node("LegL").hide()
+		actor.get_node("LegR").show()
+	elif x == 2:
+		SPEED = 400
+		JUMP_VELOCITY = -600.0
+		actor.get_node("CollisionShape2D").shape.get_rect().size.y = 33
+		actor.get_node("LegL").show()
+		actor.get_node("LegR").show()
 
 func get_movement() -> Vector2:
 	return actor.velocity

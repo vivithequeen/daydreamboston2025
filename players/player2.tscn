@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://dfmgls3ea41if"]
 
 [ext_resource type="Script" uid="uid://bdnhcm431yfr" path="res://players/ControllerHandler.gd" id="1_3gnu3"]
-[ext_resource type="Script" uid="uid://bpl1ejm5ykbgl" path="res://players/player_1.gd" id="1_qv1y8"]
+[ext_resource type="Script" uid="uid://c64slav43sa2y" path="res://players/player_2.gd" id="1_qv1y8"]
 [ext_resource type="Texture2D" uid="uid://cq58cf7mxxbex" path="res://players/art/player2.png" id="1_wood3"]
 [ext_resource type="Script" uid="uid://c4l1kiv3fwrqe" path="res://players/BodyHandler.gd" id="2_m6eid"]
 [ext_resource type="Script" uid="uid://dgm1x1s4afp81" path="res://players/InteractHandler.gd" id="4_bhnal"]
@@ -27,15 +27,13 @@ size = Vector2(3, 11)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 scale = Vector2(4, 4)
-collision_layer = 21
+collision_layer = 23
 script = ExtResource("1_qv1y8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_wood3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_wood3")
 
 [node name="ControllerHandlerComp" type="Node" parent="." node_paths=PackedStringArray("actor", "interactHandler")]

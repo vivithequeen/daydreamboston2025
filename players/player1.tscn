@@ -26,7 +26,7 @@ size = Vector2(3, 11)
 size = Vector2(3, 11)
 
 [node name="player1" type="CharacterBody2D"]
-collision_layer = 21
+collision_layer = 23
 script = ExtResource("1_u0tpj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

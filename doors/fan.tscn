@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dqws7b82m3gau"]
+[gd_scene load_steps=6 format=3 uid="uid://dqws7b82m3gau"]
 
 [ext_resource type="Texture2D" uid="uid://c6414b8caafd8" path="res://doors/fan.png" id="1_0fwxx"]
 [ext_resource type="Script" uid="uid://dji4eb1p203rh" path="res://doors/fan.gd" id="1_sw4p4"]
@@ -8,6 +8,15 @@ size = Vector2(128, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gw11n"]
 size = Vector2(128, 208)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_sw4p4"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(32, 1, 1)
+gravity = Vector3(0, -98, 0)
+linear_accel_min = -2.23517e-06
+linear_accel_max = 45.95
+scale_max = 6.75
 
 [node name="fan" type="StaticBody2D"]
 collision_layer = 9
@@ -28,6 +37,13 @@ collision_mask = 9
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fan_area"]
 position = Vector2(0, -136)
 shape = SubResource("RectangleShape2D_gw11n")
+
+[node name="p" type="GPUParticles2D" parent="."]
+amount = 30
+lifetime = 2.43
+speed_scale = 1.65
+trail_lifetime = 0.1
+process_material = SubResource("ParticleProcessMaterial_sw4p4")
 
 [connection signal="body_entered" from="fan_area" to="." method="_on_fan_area_body_entered"]
 [connection signal="body_exited" from="fan_area" to="." method="_on_fan_area_body_exited"]
