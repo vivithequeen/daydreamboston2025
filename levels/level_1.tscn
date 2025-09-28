@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cdnlrbe872ey"]
+[gd_scene load_steps=8 format=3 uid="uid://cdnlrbe872ey"]
 
 [ext_resource type="Texture2D" uid="uid://icu66nww6k2w" path="res://tilemap.png" id="1_3hls8"]
 [ext_resource type="PackedScene" uid="uid://xgpxl5f82nf6" path="res://buttons/end_area.tscn" id="5_n46q3"]
 [ext_resource type="PackedScene" uid="uid://3gj0rvdh70nu" path="res://boxes/big_box.tscn" id="6_5hph3"]
-[ext_resource type="PackedScene" uid="uid://ds5hi0alc14pw" path="res://boxes/small_box.tscn" id="6_btoec"]
 [ext_resource type="PackedScene" uid="uid://c1pcf6senove8" path="res://players/player1.tscn" id="8_5rr72"]
 [ext_resource type="PackedScene" uid="uid://dfmgls3ea41if" path="res://players/player2.tscn" id="9_5rr72"]
 
@@ -79,6 +78,3 @@ position = Vector2(710, 238)
 
 [node name="EndArea" parent="." instance=ExtResource("5_n46q3")]
 position = Vector2(496, 222)
-
-[node name="SmallBox" parent="." instance=ExtResource("6_btoec")]
-position = Vector2(320, 248)

@@ -49,6 +49,8 @@ func _physics_process(delta: float) -> void:
 		interactHandler.use_interactable()
 	change_arms(numArms)
 	change_legs(numLegs)
+	if Input.is_action_just_pressed("restart"):
+		Global_sac.restart_level()
 	actor.move_and_slide()
 
 

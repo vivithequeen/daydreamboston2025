@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bsnro0nl8tmqs"]
+[gd_scene load_steps=10 format=3 uid="uid://bsnro0nl8tmqs"]
 
 [ext_resource type="Texture2D" uid="uid://icu66nww6k2w" path="res://tilemap.png" id="1_ehv2h"]
 [ext_resource type="PackedScene" uid="uid://ds5hi0alc14pw" path="res://boxes/small_box.tscn" id="2_15wb7"]
 [ext_resource type="PackedScene" uid="uid://drpfo457w3kf2" path="res://buttons/weight_button.tscn" id="3_eoq84"]
 [ext_resource type="PackedScene" uid="uid://dqws7b82m3gau" path="res://doors/fan.tscn" id="6_s77qv"]
-[ext_resource type="PackedScene" uid="uid://ci0r16c15457d" path="res://upgrades/Upgrade_Stand.tscn" id="7_5hnhx"]
 [ext_resource type="PackedScene" uid="uid://c1pcf6senove8" path="res://players/player1.tscn" id="8_78pok"]
 [ext_resource type="PackedScene" uid="uid://xgpxl5f82nf6" path="res://buttons/end_area.tscn" id="8_dfjjl"]
 [ext_resource type="PackedScene" uid="uid://dfmgls3ea41if" path="res://players/player2.tscn" id="9_lvfll"]
@@ -71,9 +70,6 @@ activate_objects = [NodePath("../fan")]
 
 [node name="fan" parent="." instance=ExtResource("6_s77qv")]
 position = Vector2(624, 600)
-
-[node name="Node2D" parent="." instance=ExtResource("7_5hnhx")]
-position = Vector2(763, 571)
 
 [node name="player1" parent="." instance=ExtResource("8_78pok")]
 position = Vector2(629, 370)

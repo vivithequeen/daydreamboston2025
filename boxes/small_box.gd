@@ -3,7 +3,7 @@ extends RigidBody2D
 var base_weight := 1;
 var current_weight : int;
 var is_box = true;
-var canfloat = false;
+var canfloat = true;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	current_weight = base_weight;
