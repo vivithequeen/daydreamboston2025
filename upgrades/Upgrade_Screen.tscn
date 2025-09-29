@@ -73,6 +73,23 @@ script = ExtResource("2_3iw71")
 position = Vector2(8.06131, 7.94962)
 texture = ExtResource("3_talqu")
 
+[node name="Label" type="Label" parent="CanvasLayer/Weight"]
+layout_mode = 0
+offset_left = 20.61
+offset_right = 318.61
+offset_bottom = 137.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.295867, 0.295866, 0.295866, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 15
+theme_override_constants/outline_size = 80
+theme_override_constants/shadow_outline_size = 55
+theme_override_font_sizes/font_size = 100
+text = "Heavy"
+
 [node name="Height" type="TextureButton" parent="CanvasLayer" groups=["Sac\'s"]]
 layout_mode = 0
 offset_left = 303.0
@@ -85,6 +102,22 @@ script = ExtResource("2_3iw71")
 [node name="1" type="Sprite2D" parent="CanvasLayer/Height"]
 position = Vector2(8.06131, 7.94962)
 texture = ExtResource("4_kj6ui")
+
+[node name="Label" type="Label" parent="CanvasLayer/Height"]
+offset_left = 20.61
+offset_right = 761.61
+offset_bottom = 137.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.295867, 0.295866, 0.295866, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 15
+theme_override_constants/outline_size = 80
+theme_override_constants/shadow_outline_size = 55
+theme_override_font_sizes/font_size = 100
+text = "Nothing :("
 
 [node name="Arm1" type="TextureButton" parent="CanvasLayer" groups=["Sac\'s"]]
 layout_mode = 0
@@ -99,6 +132,22 @@ script = ExtResource("2_3iw71")
 position = Vector2(8.06131, 7.94962)
 texture = ExtResource("5_4tli0")
 
+[node name="Label" type="Label" parent="CanvasLayer/Arm1"]
+offset_left = 20.61
+offset_right = 225.61
+offset_bottom = 137.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.295867, 0.295866, 0.295866, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 15
+theme_override_constants/outline_size = 80
+theme_override_constants/shadow_outline_size = 55
+theme_override_font_sizes/font_size = 100
+text = "Arm"
+
 [node name="Arm2" type="TextureButton" parent="CanvasLayer" groups=["Sac\'s"]]
 layout_mode = 0
 offset_left = 300.0
@@ -111,6 +160,23 @@ script = ExtResource("2_3iw71")
 [node name="3" type="Sprite2D" parent="CanvasLayer/Arm2"]
 position = Vector2(8.06131, 7.94962)
 texture = ExtResource("5_4tli0")
+
+[node name="Label" type="Label" parent="CanvasLayer/Arm2"]
+offset_left = 20.61
+offset_right = 225.61
+offset_bottom = 277.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.295867, 0.295866, 0.295866, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 15
+theme_override_constants/outline_size = 80
+theme_override_constants/shadow_outline_size = 55
+theme_override_font_sizes/font_size = 100
+text = "Arm
+"
 
 [node name="Leg1" type="TextureButton" parent="CanvasLayer" groups=["Sac\'s"]]
 layout_mode = 0
@@ -125,6 +191,22 @@ script = ExtResource("2_3iw71")
 position = Vector2(8.06131, 7.94962)
 texture = ExtResource("6_w25qd")
 
+[node name="Label" type="Label" parent="CanvasLayer/Leg1"]
+offset_left = 20.61
+offset_right = 187.61
+offset_bottom = 137.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.295867, 0.295866, 0.295866, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 15
+theme_override_constants/outline_size = 80
+theme_override_constants/shadow_outline_size = 55
+theme_override_font_sizes/font_size = 100
+text = "Leg"
+
 [node name="Leg2" type="TextureButton" parent="CanvasLayer" groups=["Sac\'s"]]
 layout_mode = 0
 offset_left = 301.0
@@ -137,6 +219,22 @@ script = ExtResource("2_3iw71")
 [node name="5" type="Sprite2D" parent="CanvasLayer/Leg2"]
 position = Vector2(8.06131, 7.94962)
 texture = ExtResource("6_w25qd")
+
+[node name="Label" type="Label" parent="CanvasLayer/Leg2"]
+offset_left = 20.61
+offset_right = 187.61
+offset_bottom = 137.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.295867, 0.295866, 0.295866, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 15
+theme_override_constants/outline_size = 80
+theme_override_constants/shadow_outline_size = 55
+theme_override_font_sizes/font_size = 100
+text = "Leg"
 
 [connection signal="mouse_entered" from="CanvasLayer/Weight" to="CanvasLayer/Weight" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Weight" to="CanvasLayer/Weight" method="_on_mouse_exited"]

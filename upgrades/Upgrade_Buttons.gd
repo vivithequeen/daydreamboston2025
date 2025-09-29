@@ -60,8 +60,9 @@ func _on_pressed() -> void:
 func _on_mouse_entered() -> void:
 	scale *= 1.2
 	modulate.a8 = 200
-
+	$"Label".visible = true
 
 func _on_mouse_exited() -> void:
 	scale /= 1.2
 	modulate.a8 = 255
+	$"Label".visible = false
